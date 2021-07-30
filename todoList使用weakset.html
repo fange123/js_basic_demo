@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 400px;
+        }
+                
+        ul li {
+            height: 30px;
+            padding: 0 10px;
+            line-height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rebeccapurple;
+            margin: 10px 0;
+        }
+                
+        ul li a {
+            color: red;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: salmon;
+            line-height: 20px;
+            text-decoration: none;
+        }
+                
+        ul li span {
+            float: left;
+            color: #000;
+        }
+                
+        .remove {
+            border: 1px solid #ccc;
+            cursor: not-allowed;
+        }
+                
+        .remove span {
+            color: #ccc;
+        }
+                
+        .remove a {
+            background: #ccc;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span> a1234455</span>
+            <a href="javascript:;">叉</a>
+        </li>
+        <li>
+            <span> eeeee</span>
+            <a href="javascript:;">叉</a>
+        </li>
+        <li>
+            <span> fffffff</span>
+            <a href="javascript:;">叉</a>
+        </li>
+    </ul>
+
+    <script>
+        class TodoList {
+            constructor() {
+            this.items = document.querySelectorAll('ul>li')
+            this.lists = new WeakSet()
+            this.items.forEach(item => this.lists.add(item))
+        }
+            addEvent() {
+                this.items.forEach(item => {
+                    const a = item.querySelector('a')
+                    a.addEventListener('click', event => {
+                        const parentNode = event.target.parentElement
+                        if (this.lists.has(parentNode)) {
+                            parentNode.classList.add('remove')
+                            this.lists.delete(parentNode)
+
+                        } else {
+                            parentNode.classList.remove('remove')
+                            this.lists.add(parentNode)
+
+                        }
+                    })
+                })
+            }
+
+        }
+        new TodoList().addEvent()
+    </script>
+
+</body>
+
+</html>

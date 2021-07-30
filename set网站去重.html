@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 400px;
+        }
+        
+        ul li {
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        ul li:nth-child(2n) {
+            background: salmon;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" name="zhy">
+    <ul></ul>
+
+    <script>
+        const obj = {
+            data: new Set(),
+            keyWord(word) {
+                this.data.add(word)
+            },
+            show() {
+                const ul = document.querySelector('ul')
+                ul.innerHTML = ''
+                this.data.forEach(function(value) {
+                    ul.innerHTML += `<li>${value}</li>`
+                })
+            }
+        }
+        const input = document.querySelector("[name='zhy']")
+        input.addEventListener('blur', function() {
+            obj.keyWord(this.value)
+            obj.show()
+        })
+    </script>
+</body>
+
+</html>

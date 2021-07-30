@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return post()">
+        <input type="checkbox" name="agree" error='请同意'>同意</input>
+        <input type="checkbox" name="student" error='请勾选名字'>张大宝</input>
+        <input type="submit" />
+    </form>
+    <script>
+        function post() {
+            const inputs = document.querySelectorAll("[error]")
+            const map = new Map()
+            inputs.forEach((item) => {
+                map.set(item, {
+                    error: item.getAttribute('error'),
+                    status: item.checked
+                })
+            });
+            [...map].every(([dom, value]) => {
+                value.status || alert(value.error)
+                return value.status
+            })
+            return false
+
+        }
+    </script>
+
+</body>
+
+</html>

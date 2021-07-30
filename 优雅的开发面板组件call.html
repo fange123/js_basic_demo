@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dl {
+            width: 200px;
+        }
+        
+        dt {
+            background: salmon;
+            height: 30px;
+            width: 100%;
+        }
+        
+        dd {
+            background: seagreen;
+            height: 100px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <dl>
+        <dt>11</dt>
+        <dd>22</dd>
+        <dt>33</dt>
+        <dd>44</dd>
+    </dl>
+    <script>
+        document.querySelectorAll('dt').forEach((dt, i) => {
+            dt.addEventListener('click', () => panel(i))
+        })
+        const panel = (index) => {
+            const dds = document.querySelectorAll('dd')
+            dds.forEach(dd => dd.setAttribute('hidden', 'hidden'))
+            dds[index].removeAttribute('hidden')
+        }
+    </script>
+
+</body>
+
+</html>
