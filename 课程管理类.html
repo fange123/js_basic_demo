@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const data = [
+      { name: 'js', price: 100 },
+      { name: 'css', price: 200 },
+      { name: 'html', price: 300 },
+    ]
+    class Lesson {
+      constructor(data) {
+        this.modal = data
+      }
+
+      get price() {
+        return this.modal.price
+      }
+      get name() {
+        return this.modal.name
+      }
+
+      static totalMoney(data) {
+        return data.reduce((p, c) => {
+          return p + c.price
+        }, 0)
+      }
+
+      static maxMoney(data) {
+        return data.sort((a, b) => b.price - a.price)[0]
+      }
+
+      static createObj(data) {
+        return data.map(item => new Lesson(item))
+      }
+
+    }
+
+    const lessons = Lesson.createObj(data)
+    const maxLessonPrice = Lesson.maxMoney(data).price
+    const maxLessonName = Lesson.maxMoney(data).name
+    const totalMoney = Lesson.totalMoney(data)
+    console.log(lessons);
+    console.log(maxLessonPrice);//300
+    console.log(maxLessonName);//html
+    console.log(totalMoney);//600
+
+  </script>
+
+</body>
+
+</html>

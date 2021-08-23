@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="btn"></button>
+  <button id="btn"></button>
+  <script>
+    let btn = document.querySelectorAll('button')
+    const classBtn = Array.prototype.filter.call(btn, item => item.hasAttribute('class'))[0]
+    const idBtn = [].filter.call(btn, item => item.hasAttribute('id'))[0]
+    const classBtn_1 = [...btn].filter(item => item.hasAttribute('class'))[0]
+    const idBtn_1 = Array.from(btn).filter(item => item.hasAttribute('id'))[0]
+  </script>
+
+</body>
+
+</html>
