@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const module = (function () {
+
+      const moduleList = {}//定义一个容器来存储模块
+      function define(name, modules, action) {
+        modules.map((m, i) => modules[i] = moduleList[m])
+        moduleList[name] = action.apply(null, modules)//往容器里面压入一个模块
+
+      }
+
+      return { define }
+
+    })()
+    //第一个参数：模块的名称，第二个参数：依赖的其他模块，第三个参数：执行的动作
+    module.define('myTool', [], function () {
+      return {
+        first(arr) {
+          return arr[0]
+        },
+        max(arr, key) {
+          return arr.sort((a, b) => b[key] - a[key])[0]
+        }
+      }
+    })
+    module.define('lesson', ['myTool'], function (myTool) {
+      const data = [
+        {
+          name: 'js', price: 200
+        },
+        {
+          name: 'html', price: 190
+        },
+      ]
+
+      console.log(myTool.max(data, 'price'));
+
+    })
+
+  </script>
+
+</body>
+
+</html>
