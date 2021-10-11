@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: pink;
+    }
+
+    main {
+      background: orange;
+      height: 50px;
+    }
+
+    /* 自动撑满父级 */
+    main div {
+      background: #fff;
+      height: -webkit-fill-available;
+      width: -webkit-fill-available
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>内容</div>
+  </main>
+
+</body>
+
+</html>
