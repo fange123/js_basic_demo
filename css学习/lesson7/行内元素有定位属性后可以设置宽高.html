@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 子元素绝对定位，，参照的父元素，除了static都可以 */
+    main {
+
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      position: relative;
+      background: pink;
+    }
+
+    /* 行内元素，不需要写display：block 添加定位属性，也可以设置宽高 */
+    main span {
+      position: absolute;
+      background-color: red;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <span>😄</span>
+  </main>
+
+</body>
+
+</html>

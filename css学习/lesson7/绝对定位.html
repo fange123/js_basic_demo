@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 子元素绝对定位，，参照的父元素，除了static都可以 */
+    main {
+
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      position: fixed;
+    }
+
+    div {
+      float: left;
+      border: 1px solid salmon;
+      background: pink;
+      width: 100px;
+      height: 100px;
+    }
+
+    div:nth-of-type(1) {
+      position: absolute;
+      top: 200px;
+      left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+  </main>
+
+</body>
+
+</html>

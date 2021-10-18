@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 子元素绝对定位，，参照的父元素，除了static都可以 */
+    main {
+
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      position: fixed;
+      overflow: hidden;
+    }
+
+    /* 绝对定位的子元素如果没有设置大小尺寸，使用上又下左四个值定位会给元素设置大小的 */
+
+    main div {
+      background-color: red;
+      position: absolute;
+      top: 100px;
+      left: 300px;
+      bottom: 100px;
+      right: -100px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div></div>
+  </main>
+
+</body>
+
+</html>
