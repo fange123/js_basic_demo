@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main {
+      width: 300px;
+      height: 300px;
+      background: green;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 10px;
+      column-gap: 10px;
+
+    }
+
+    main div {
+      background: pink;
+      border: 1px solid #ccc;
+
+    }
+
+    /* TODO:盒子放置位置：第一行第一列开始，第三行第三列结束 */
+    main div:first-child {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-row-end: 3;
+      grid-column-end: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 学习链接；https://www.bilibili.com/video/BV134411m7dJ?p=20&spm_id_from=pageDriver */
+    /* TODO: 如果删格出来的够用，就不需要挨个命名，但是如果需要打通一行，或者一列，比如header占一整行，这样的，就必须用两个（多个）相同的名字规定，但是像main nav这样，划分出来够用的，可以用.或者..或者...   等等来占位 */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: 60px 1fr 60px;
+      grid-template-areas: "header header"
+        "... ..."
+        "footer footer";
+
+    }
+
+    header,
+    footer {
+      background: pink;
+      padding: 3px;
+      background-clip: content-box;
+    }
+
+    nav,
+    main {
+      background: orange;
+      padding: 3px;
+      background-clip: content-box;
+    }
+
+    header {
+      grid-area: header;
+    }
+
+
+    footer {
+      grid-area: footer;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    footer div {
+      background-color: red;
+      padding: 10px;
+      background-clip: content-box;
+    }
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <nav></nav>
+  <main></main>
+  <footer>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </footer>
+
+</body>
+
+</html>
