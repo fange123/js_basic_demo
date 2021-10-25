@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #222f3e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      margin-right: 20px;
+      transition: 1s;
+    }
+
+    main:hover div {
+      transform: scale(.6);
+      filter: blur(10px);
+    }
+
+    main div img {
+      background-size: 100%;
+    }
+
+    main:hover div:hover {
+      filter: none;
+      transform: scale(1.6);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div><img src="../../images/cat.jpeg" alt=""></div>
+    <div><img src="../../images/child.jpeg" alt=""></div>
+    <div><img src="../../images/hair.jpeg" alt=""></div>
+  </main>
+
+</body>
+
+</html>

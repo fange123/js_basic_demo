@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #34495e;
+    }
+
+    nav {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #e74c3c;
+      position: relative;
+    }
+
+    nav::after {
+      content: '张大宝';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #fff;
+      transform: translate(-50%, -50%);
+
+    }
+
+    ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    ul li {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #e74c3c;
+      border-radius: 50%;
+      transition: 1s;
+      transform-origin: 150px 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    nav:hover li:nth-child(1) {
+      transform: rotate(40deg);
+    }
+
+    nav:hover li:nth-child(1) span {
+
+      transform: rotate(-40deg);
+    }
+
+    nav:hover li:nth-child(2) {
+      transform: rotate(80deg);
+    }
+
+    nav:hover li:nth-child(2) span {
+      transform: rotate(-80deg);
+    }
+
+    nav:hover li:nth-child(3) {
+      transform: rotate(120deg);
+    }
+
+    nav:hover li:nth-child(3) span {
+      transform: rotate(-120deg);
+    }
+
+    nav:hover li:nth-child(4) {
+      transform: rotate(160deg);
+    }
+
+    nav:hover li:nth-child(4) span {
+      transform: rotate(-160deg);
+    }
+
+    nav:hover li:nth-child(5) {
+      transform: rotate(200deg);
+    }
+
+    nav:hover li:nth-child(5) span {
+      transform: rotate(-200deg);
+    }
+
+    nav:hover li:nth-child(6) {
+      transform: rotate(240deg);
+    }
+
+    nav:hover li:nth-child(6) span {
+      transform: rotate(-240deg);
+    }
+
+    nav:hover li:nth-child(7) {
+      transform: rotate(280deg);
+    }
+
+    nav:hover li:nth-child(7) span {
+      transform: rotate(-280deg);
+    }
+
+    nav:hover li:nth-child(8) {
+      transform: rotate(320deg);
+    }
+
+    nav:hover li:nth-child(8) span {
+      transform: rotate(-320deg);
+    }
+
+    nav:hover li:nth-child(9) {
+      transform: rotate(360deg);
+    }
+
+    nav:hover li:nth-child(9) span {
+      transform: rotate(-360deg);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><span>1</span></li>
+      <li><span>2</span></li>
+      <li><span>3</span></li>
+      <li><span>4</span></li>
+      <li><span>5</span></li>
+      <li><span>6</span></li>
+      <li><span>7</span></li>
+      <li><span>8</span></li>
+      <li><span>9</span></li>
+    </ul>
+  </nav>
+
+</body>
+
+</html>

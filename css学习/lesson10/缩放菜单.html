@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    main ul {
+      list-style: none;
+      display: flex;
+    }
+
+    main ul li {
+      margin-right: 20px;
+
+    }
+
+    main ul li strong {
+      padding: 5px 30px;
+      background: #10ac84;
+
+    }
+
+    main ul li strong:hover+div {
+      transform: scale(1);
+    }
+
+    main ul li strong+div {
+      background: #576574;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      transform: scale(0);
+      transition: .6s;
+      transform-origin: top left;
+      position: relative;
+      z-index: -1;
+    }
+
+    main ul li strong+div a {
+      text-decoration: none;
+      color: #fff;
+      padding: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <ul>
+      <li>
+        <strong>video</strong>
+        <div>
+          <a href="">php</a>
+          <a href="">html</a>
+        </div>
+      </li>
+      <li>
+        <strong>live</strong>
+        <div>
+          <a href="">linux</a>
+          <a href="">css3</a>
+        </div>
+      </li>
+    </ul>
+
+  </main>
+
+</body>
+
+</html>
