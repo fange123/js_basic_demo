@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #718093;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #dcdde1;
+      /* TODO:perspective 是透视，值越小，表示离得越近，越大，表示里的越远*/
+      /* 使用函数的方法写表示加在自己身上的透视 */
+      transform: perspective(600px) rotateY(45deg);
+      /* 下面的写法代表透视到子元素上 */
+      /* perspective: 600; */
+    }
+
+    main div {
+      width: 200px;
+      height: 200px;
+      background: #fbc531;
+      margin: 0 10px;
+
+      transform: rotateY(45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div></div>
+    <div></div>
+  </main>
+
+</body>
+
+</html>

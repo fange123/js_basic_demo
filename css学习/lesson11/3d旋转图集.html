@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #718093;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #f5f6fa;
+      transform-style: preserve-3d;
+      transform: perspective(900px);
+      transition: 1s;
+      transform-origin: center center -200px;
+    }
+
+    main div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+
+    }
+
+    main div img {
+      background-size: 100% 100%;
+    }
+
+    main div:nth-child(1) {
+      transform-origin: center center -200px;
+      transform: rotateY(90deg);
+    }
+
+    main div:nth-child(2) {
+      transform-origin: center center -200px;
+      transform: rotateY(180deg);
+    }
+
+    main div:nth-child(3) {
+      transform-origin: center center -200px;
+      transform: rotateY(270deg);
+    }
+
+    main div:nth-child(4) {
+      transform-origin: center center -200px;
+      transform: rotateY(360deg);
+    }
+
+    .wrap {
+      width: 500px;
+      height: 500px;
+      border: 1px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrap:hover main {
+      transform: perspective(900px) rotateY(300deg);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main>
+      <div><img src="../../images/cat.jpeg" alt=""></div>
+      <div><img src="../../images/girl.jpeg" alt=""></div>
+      <div><img src="../../images/hat.jpeg" alt=""></div>
+      <div><img src="../../images/hair.jpeg" alt=""></div>
+    </main>
+  </div>
+
+
+
+</body>
+
+</html>
