@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: #34495e;
+    }
+
+    main {
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main div {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    main div::before {
+      content: '张大宝';
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      font-size: 1.5em;
+      color: #2c3e50;
+      position: absolute;
+      background: #95a5a6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 2s;
+
+    }
+
+    main div::after {
+      content: 'bjyxszd';
+      text-transform: uppercase;
+      font-size: 1rem;
+      position: absolute;
+      bottom: -50px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      transform: translateX(-999px);
+      color: #95a5a6;
+      transition: 1s;
+    }
+
+    main div:hover::before {
+      transform: rotate(360deg);
+    }
+
+    main .move::after {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div></div>
+  </main>
+
+</body>
+
+<script>
+  document.querySelector('div').addEventListener('transitionend', function () {
+    document.querySelector('div').className = 'move'
+  })
+</script>
+
+</html>
