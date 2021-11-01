@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      background: #34495e;
+    }
+
+    .heart {
+      width: 200px;
+      height: 200px;
+      background: #e74c3c;
+      position: relative;
+      transform: rotate(45deg) scale(.5);
+      opacity: .5;
+      animation-name: myHeart;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    .heart::before {
+      content: '';
+      width: 200px;
+      height: 200px;
+      background: #e74c3c;
+      position: absolute;
+      transform: translateX(-100px);
+      border-radius: 50%;
+
+    }
+
+    .heart::after {
+      content: '';
+      width: 200px;
+      height: 200px;
+      background: #e74c3c;
+      position: absolute;
+      transform: translateY(-100px);
+      border-radius: 50%;
+
+    }
+
+    @keyframes myHeart {
+      25% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: rotate(45deg) scale(.5);
+        opacity: .5;
+      }
+
+      75% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+
+      85% {
+        transform: rotate(45deg) scale(.5);
+        opacity: .5;
+      }
+
+      100% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="heart"></div>
+
+</body>
+
+</html>

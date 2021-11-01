@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      background: #34495e;
+    }
+
+    main {
+      width: 200px;
+      height: 200px;
+      animation-name: zhangdabao;
+      animation-duration: 5s;
+    }
+
+    /* TODO:100%和0%都是回到初始状态，所以某些情况下可以不用设置 */
+
+    @keyframes zhangdabao {
+      0% {
+        background: #ecf0f1;
+
+      }
+
+      25% {
+        background: #e74c3c;
+      }
+
+      50% {
+        background: #8e44ad;
+        transform: scale(2);
+      }
+
+      75% {
+        background: #f1c40f;
+      }
+
+      100% {
+        background: #27ae60;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <main></main>
+
+</body>
+
+</html>

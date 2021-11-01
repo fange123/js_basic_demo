@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #34495e;
+      display: grid;
+    }
+
+    main {
+      width: 400px;
+      height: 200px;
+      overflow: hidden;
+      align-self: center;
+      justify-self: center;
+      display: grid;
+    }
+
+    section {
+      width: 1600px;
+      height: 200px;
+      display: grid;
+      grid-template: 1fr/repeat(4, 400px);
+      animation-name: lunbo;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      animation-timing-function: steps(4, end);
+    }
+
+    main:hover section {
+      animation-play-state: paused;
+    }
+
+    div {
+      width: 400px;
+      height: 200px;
+      overflow: hidden;
+
+    }
+
+    img {
+      width: 100%;
+    }
+
+    @keyframes lunbo {
+      to {
+        transform: translateX(-1600px);
+      }
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <div><img src="../../images/cat.jpeg" alt=""></div>
+      <div><img src="../../images/girl.jpeg" alt=""></div>
+      <div><img src="../../images/hair.jpeg" alt=""></div>
+      <div><img src="../../images/hat.jpeg" alt=""></div>
+    </section>
+  </main>
+
+</body>
+
+</html>

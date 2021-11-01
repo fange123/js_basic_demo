@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      background: #34495e;
+    }
+
+    main {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      animation-name: zhangdabao;
+      animation-duration: 5s;
+      border: 10px solid yellow;
+    }
+
+    /* TODO:不是所有属性都有像宽度这样的中间值的，比如border的类型，可以一下子从实线变成点线 */
+
+
+    @keyframes zhangdabao {
+      to {
+        width: 400px;
+        height: 400px;
+        background: #fff;
+        /* border: 10px double yellow; */
+        border: 10px dashed yellow;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <main></main>
+
+</body>
+
+</html>

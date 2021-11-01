@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 10vh 1fr 10vh;
+    }
+
+    header {
+      background: #e67e22;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.2em;
+      animation-name: translate;
+      animation-duration: .5s;
+    }
+
+    main {
+      background: url('../../images/cat.jpeg') no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation-name: rotate;
+      animation-duration: .5s;
+      /* TODO:动画最后停留模式 把物体动画地从一个地方移动到另一个地方，并让它停留在那里：*/
+      animation-fill-mode: backwards;
+      animation-delay: 1s;
+    }
+
+    main div {
+      width: 80vw;
+      border-radius: 10px;
+      padding: 10px;
+      opacity: .8;
+      color: #fff;
+      box-shadow: 0, 0, 10px rgba(0, 0, 0, .8);
+
+    }
+
+    main div:nth-child(1) {
+      background: #2ecc71;
+      transform: translateY(-50px);
+    }
+
+    main div:nth-child(2) {
+      background: #e74c3c;
+    }
+
+    footer {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.2em;
+      animation-name: rotate;
+      animation-duration: .5s;
+      /* TODO:动画最后停留模式 把物体动画地从一个地方移动到另一个地方，并让它停留在那里：*/
+      animation-fill-mode: backwards;
+      animation-delay: .5s;
+
+    }
+
+    @keyframes translate {
+      from {
+        transform: translateX(-100vw);
+
+      }
+
+      to {
+        transform: translateX(0);
+
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: scale(0) rotate(306deg);
+
+      }
+
+      to {
+        transform: scale(1) rotate(0deg);
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>bjyx</header>
+  <main>
+    <div>Living in this beautiful planet called Earth, I don’t recall any earthling who had chosen the coordinates where
+      they
+      were given life to. There are these colorful sheets called flags which determine the land that we can walk over.
+      The sky
+      is surely in different colors in different coordinates and people see love in red, peace in green and death in
+      gray. As
+
+    </div>
+    <div>
+      No matter where we are from or what color had covered our flesh, Flat UI Colors proved me the power and common
+      sense of
+      beautifully paired colors is a global fact and it’s huge. Amongst the more than 30 projects that I’ve done so far,
+      I’ve
+
+    </div>
+  </main>
+  <footer>
+    bjyxszd
+  </footer>
+</body>
+
+</html>
