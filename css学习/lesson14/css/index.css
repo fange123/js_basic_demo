@@ -1,0 +1,11 @@
+@import url(large.css) only screen and (min-width: 1600px);
+@import url(normal.css) only screen and (max-width: 1200px);
+@import url(small.css) only screen and (max-width: 768px);
+
+/* TODO:一定要注意上面引入顺利，后面的会覆盖前面的 */
+
+/** only是因为某些老板浏览器不识别媒体查询，会翻译成media="only"，因为并没有什么媒体类型是"only"，所以浏览器也不会去渲染后面的样式表 */
+/* * not是逻辑非 */
+/* *逻辑或是中间加逗号 ,下面这样*/
+
+/* @import url(large.css) only screen and (min-width: 500px), (max-width: 1000px); */
