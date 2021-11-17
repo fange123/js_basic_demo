@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+
+    <div id="box">
+      <span id="span">span</span>
+
+      <span id="my">my</span>
+
+    </div>
+
+    <p id="content">content</p>
+
+
+  </main>
+
+</body>
+<script>
+  const span = document.querySelector('#my')
+  const content = document.querySelector('#content')
+  const box = document.querySelector('#box')
+
+  //node.insertBefore(newnode,existingnode)
+  // newnode	节点对象	必须。要插入的节点对象
+  // existingnode	节点对象	必须。要添加新的节点前的子节点。
+
+  //TODO:意思就是，我要往id为box的盒子里添加一个节点，但是box里面有很多节点，具体新插进来的节点要放在哪里，
+  //TODO:就需要在box的节点里面找到一个节点，插在这个节点的前面
+  box.insertBefore(content, span)
+</script>
+
+</html>
