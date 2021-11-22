@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .progress {
+      width: 0;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: #fff;
+      background: pink;
+    }
+
+    .wrap {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div><button onclick="loading()">加载</button></div>
+  <div class='wrap'>
+    <div class="progress"></div>
+
+  </div>
+
+
+</body>
+<script src="../jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script>
+  async function loading() {
+    for (const i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+      let num = await new Promise(function (resolve, reject) {
+        setTimeout(() => {
+          resolve(i)
+        }, 1000)
+      })
+      let progressNum = (num / 10) * 100
+      let progress = document.querySelector('.progress')
+      progress.style.width = Math.round(progressNum) + '%'
+      progress.innerHTML = Math.round(progressNum) + '%'
+
+    }
+
+  }
+
+</script>
+
+</html>
