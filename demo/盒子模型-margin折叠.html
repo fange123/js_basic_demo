@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      margin: 0
+    }
+
+    /* https://segmentfault.com/a/1190000019259073 */
+
+    /*
+    *因为嵌套也属于毗邻，所以在样式表中优先级更高子元素的margin会覆盖外层父元素定义的margin。
+
+父元素的第一个子元素的上边距margin-top如果碰不到有效的border或者padding.就会不断一层一层的找自己 “领导”(父元素，祖先元素)的麻烦。只要给领导设置个有效的 border或者padding就可以有效的管制这个目无领导的margin防止它越级，假传圣旨，把自己的margin当领导的margin执行。
+
+解决办法：
+1、父元素或者子元素使用浮动或者绝对定位。
+2、父级设置overflow:hidden
+3、父级设置padding（破坏非空白的折叠条件）
+4、父级设置border
+
+    */
+
+    .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border: 10px solid green;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fa">
+
+    <div class="son">son</div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      margin: 0
+    }
+
+    /* 子盒子的实际大小（margin+可见框大小） === 父盒子的内容区的大小 */
+
+    /* egg:1 */
+    /* .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: auto;
+      margin: auto;
+      height: 100px;
+      background-color: orange;
+    } */
+
+    /* egg:2 */
+    /* .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: auto;
+      height: 100px;
+      margin: 20px;
+      background-color: orange;
+    } */
+
+    /* egg:3 */
+    /* .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: auto;
+      height: 100px;
+      margin-left: auto;
+      margin-right: 20px;
+      background-color: orange;
+    } */
+
+    /* egg:4 */
+    .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: 200px;
+      height: 100px;
+      margin-left: auto;
+      background-color: orange;
+    }
+
+    /*
+      !:1.如果子元素没有margin或者左右margin都是auto或者左auto或者右auto,宽度为auto,那么宽度会占满整个父盒子的content
+      !:2.如果子元素有左右margin,宽度为auto,那么父盒子的content会给左右margin分配空间，auto的宽度占满剩余空间
+      !:3.如果子元素只有左margin或者右margin,宽度为auto,那么父盒子的content会给左或者右margin分配空间，auto的宽度占满剩余空间
+      !:4.如果子元素宽度有固定值，margin是auto时，auto会分配父盒子剩余的content空间
+    */
+  </style>
+</head>
+
+<body>
+  <div class="fa">
+
+    <div class="son">son</div>
+  </div>
+
+</body>
+
+</html>

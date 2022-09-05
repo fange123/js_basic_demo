@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      margin: 0
+    }
+
+    /* 盒子的实际大小就是可见框的大小，外边距margin和盒子大小无关 */
+    /* box-sizing决定盒子实际大小 */
+    /* 默认属性值时content-box，意思是给盒子设置的宽高都是内容区的宽高，盒子的实际大小会因为padding和border而变化 */
+    /* border-box:可见框的大小就是设置的宽高，如果有padding或者margin，也不会影响盒子实际大小 */
+
+    .fa {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      overflow: hidden
+    }
+
+    .son {
+      width: 200px;
+      height: 100px;
+      padding: 10px;
+      margin: 10px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fa">
+
+    <div class="son">son</div>
+  </div>
+
+</body>
+
+</html>
