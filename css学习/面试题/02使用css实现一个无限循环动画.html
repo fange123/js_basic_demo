@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      animation: boxAnimate 3s infinite
+    }
+
+    /* 想要实现CSS动画的无限循环，其实主要就是要使用animation-iteration-count这个属性，将其设置为infinite，动画就会一直循环播放 */
+
+    @keyframes boxAnimate {
+      to {
+        background-color: green
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+</body>
+
+</html>

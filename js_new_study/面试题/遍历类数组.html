@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    const list = document.querySelectorAll('li')
+    //* 类数组不是数组，不能使用数组的方法，比如：map/filter等
+
+    //拥有一个 length 属性和若干索引属性的对象
+    //怎么遍历，可以看看有没有迭代器，有的话可以用for  of遍历
+    list[Symbol.iterator]
+    // 1.
+    for (li of list) {
+      console.log(li)
+    }
+    // 2.
+
+    console.log('----------------')
+    for (let i = 0; i < list.length; i++) {
+      console.log(list[i])
+    }
+
+    // 3.
+    console.log('----------------'),
+      [...list].map(item => console.log(item))
+
+    // 4.
+    console.log('----------------'),
+      Array.from(list).map(item => console.log(item))
+
+    // 5.call方法间接调用
+    console.log('----------------'),
+      Array.prototype.slice.call(list).map(item => console.log(item))
+
+
+    // <!-- TODO:类数组转数组的方法 -->
+    var arrayLike = { 0: 'name', 1: 'age', 2: 'sex', length: 3 }
+    // 1. slice
+    Array.prototype.slice.call(arrayLike); // ["name", "age", "sex"]
+    // 2. splice
+    Array.prototype.splice.call(arrayLike, 0); // ["name", "age", "sex"]
+    // 3. ES6 Array.from
+    Array.from(arrayLike); // ["name", "age", "sex"]
+    // 4. apply
+    Array.prototype.concat.apply([], arrayLike)
+
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* 两端对齐 */
+  p {
+    width: 300px;
+    background-color: pink;
+    /* justify对最后一行无效,*/
+    text-align: justify;
+    /* 解决方法2:text-align-last:该属性定义的是一段文本中最后一行在被强制换行之前的对齐规则*/
+    text-align-last: justify;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  /* 解决方法1:可以利用伪元素让改行不是最后一行  */
+
+  /* p::after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+  } */
+
+</style>
+
+<body>
+  <p>哈哈哈哈哈哈你好呀,我是你的小可爱</p>
+
+</body>
+
+</html>

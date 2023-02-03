@@ -42,3 +42,51 @@
 // {
 //   console.log(new Number(10));
 // }
+// {
+
+//   const obj = {name:'zhy'}
+//   const {name:newName} = obj
+//   console.log(name)
+// }
+// {
+// class Dog {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// };
+
+// class Labrador extends Dog {
+//   // 1
+//   constructor(size) {
+//     this.size = size;
+//   }
+//   // 2
+//   // constructor(name, size) {
+//   //   super(name);
+//   //   this.size = size;
+//   // }
+//   // 3
+//   // constructor(size) {
+//   //   super(name);
+//   //   this.size = size;
+//   // }
+//   // 4
+//   // constructor(name, size) {
+//   //   this.name = name;
+//   //   this.size = size;
+//   // }
+
+// };
+
+// new Labrador('zhy',1)
+
+
+// }
+{
+ const person = { name: "Lydia" };
+
+Object.defineProperty(person, "age", { value: 21,enumerable:true });
+
+console.log(person);
+console.log(Object.keys(person));
+}
