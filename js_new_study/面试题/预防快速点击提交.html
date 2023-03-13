@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #btn {
+      /* 1.pointer-events属性可以禁止点击事件 */
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 2.按钮可以设置disabled -->
+  <button id='btn'>
+    提交
+  </button>
+  <!-- 3.添加遮罩层... -->
+
+  <!-- 4.增加变量控，满足条件才进行后续代码 -->
+  <script type="text/javascript">
+    btn.onclick = () => {
+      console.log('提交');
+    }
+
+  </script>
+
+</body>
+
+</html>

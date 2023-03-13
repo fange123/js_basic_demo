@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 原理
+!:方法1:监听地址栏中hash变化驱动界面变化
+!:方法2：用pushstate记录浏览器的历史，驱动界面发送变化
+
+ -->
+
+<body>
+  <h1>hhh</h1>
+
+  <button onclick="goToList()">list页面</button>
+  <button onclick="goToHome()">home页面</button>
+
+  <script src="./Router.js"> </script>
+  <script>
+
+    function goToList() {
+      miniRouter.route("/list", console.log("list"));
+      miniRouter.push("/");
+
+
+    }
+
+    function goToHome() {
+      miniRouter.route("/home", console.log("home"));
+      miniRouter.push("/home");
+
+
+    }
+
+  </script>
+
+</body>
+
+</html>

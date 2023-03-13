@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 100%;
+      height: 100%;
+      background-color: pink
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+    <h1>我是主页面</h1>
+    <button onclick="change()">点击</button>
+    <hr>
+    <iframe src="../../邮件链接.html" frameborder="0" id="iframe"></iframe>
+
+  </div>
+
+  <script>
+    function change() {
+      //!:要拿到嵌入页面的window对象
+      const wd = iframe.contentWindow
+      wd.postMessage({ name: '张大宝' }, '*')
+
+    }
+  </script>
+
+</body>
+
+</html>

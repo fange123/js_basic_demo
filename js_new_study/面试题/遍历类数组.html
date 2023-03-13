@@ -21,6 +21,8 @@
     const list = document.querySelectorAll('li')
     //* 类数组不是数组，不能使用数组的方法，比如：map/filter等
 
+
+
     //拥有一个 length 属性和若干索引属性的对象
     //怎么遍历，可以看看有没有迭代器，有的话可以用for  of遍历
     list[Symbol.iterator]
@@ -58,6 +60,14 @@
     Array.from(arrayLike); // ["name", "age", "sex"]
     // 4. apply
     Array.prototype.concat.apply([], arrayLike)
+    //5.看看有没有迭代器，有的话可以用 [...]
+
+    console.log(arrayLike[Symbol.iterator])//undefined
+    //没有迭代器，不能...
+
+    // const a = [...arrayLike]
+    // console.log(a, 'a')
+
 
   </script>
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 方法1:给图片加loading='lazy'属性 -->
+<!-- 方法2:监听滚动，图片设置data-src属性保存图片资源，src不设置值，判断图片是否在可视区，
+  是的话就把data-src的值赋值给src -->
+<!-- 方法3:浏览器给提供一个新的构造函数Api   IntersectionObserver -->
+
+<!-- var io = new IntersectionObserver(callback, option)
+
+// 开始观察
+io.observe(document.getElementById('example'))
+
+// 停止观察
+io.unobserve(element)
+
+// 关闭观察器
+io.disconnect() -->
+
+<body>
+  <div>
+    <img src="../../images/cat.jpeg" alt="" loading="lazy">
+    <img data-src="../../images/hat.jpeg" alt="">
+    <img data-src="../../images/hair.jpeg" alt="">
+  </div>
+
+  <script>
+    const imgs = document.querySelectorAll("img[data-src]")
+    const config = {
+      rootMargin: '0px',
+      threshold: 0,
+    }
+    const observer = new IntersectionObserver((entries, self) => {
+      console.log(entries, self);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let img = entry.target
+          let src = img.dataset.src
+          if (src) {
+            img.src = src
+            img.removeAttribute('data-src')
+          }
+          // 解除观察
+          self.unobserve(entry.target)
+        }
+      })
+    }, config)
+
+    imgs.forEach((image) => {
+      observer.observe(image)
+    })
+  </script>
+
+
+
+</body>
+
+</html>

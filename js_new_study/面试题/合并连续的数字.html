@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // [1,2,3,4,6,7,9,13,15]=>['1->4','6->7','9','13','15']
+
+    const transformFn = (arr) => {
+
+      //处理错误边界
+      if (!Array.isArray(arr) || !arr.length) {
+        return arr
+
+      }
+      let out = []
+      let inner = []
+      //把元素一个个压栈进入inner,每压入一个就和下一个做比较
+      //如果连续，继续压栈，不连续将栈内的存入out，清空inner
+      for (let i = 0; i < arr.length; i++) {
+        inner.push(arr[i]);
+        if (inner[inner.length - 1] + 1 !== arr[i + 1]) {
+          out.push([...inner])
+          inner = []
+        }
+      }
+
+      return out.map(item => {
+        if (item.length > 1) {
+          return `${item[0]}->${item[item.length - 1]}`
+        } else {
+          return `${item[0]}`
+        }
+      })
+
+    };
+
+    console.log(transformFn([1, 3, 4, 6, 7, 9, 13, 15, 16, 17, 19, 20, 30]));
+
+  </script>
+
+</body>
+
+</html>

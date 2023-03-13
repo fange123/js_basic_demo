@@ -12,6 +12,17 @@
 
   <a href="mailto:2030564240@qq.com">邮件</a>
   <a href="tel:18943006095">电话</a>
+  <a href="" id="a"></a>
+
+  <script>
+
+    window.addEventListener('message', function (e) {
+      const { name } = e.data;
+      a.innerHTML = name
+
+
+    })
+  </script>
 
 </body>
 

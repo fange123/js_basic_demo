@@ -13,8 +13,8 @@
     <script>
         let map = new WeakMap();
         let allA = document.getElementsByTagName("a");
-        [...allA].forEach(function(a) {
-            a.addEventListener("click", function() {
+        [...allA].forEach(function (a) {
+            a.addEventListener("click", function () {
                 let select = this.getAttribute("select");
                 if (select) {
                     this.removeAttribute("select");
@@ -30,16 +30,16 @@
                     this.style.backgroundColor = "red";
                 }
 
-                let count = [...allA].reduce(function(count, item) {
+                let count = [...allA].reduce(function (count, item) {
                     return count += item.getAttribute("select") ? 1 : 0;
                 }, 0);
                 document.getElementById("count").innerHTML = `共选了${count}门课`;
 
-                let SelectedA = [...allA].filter(function(item) {
+                let SelectedA = [...allA].filter(function (item) {
                     return map.has(item);
                 });
                 let str = "";
-                SelectedA.forEach(function(item) {
+                SelectedA.forEach(function (item) {
                     str += `<span>${item.parentNode.children[0].innerHTML}</span>`;
                 });
                 document.getElementById("lists").innerHTML = str;
