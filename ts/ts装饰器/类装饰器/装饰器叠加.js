@@ -1,4 +1,5 @@
 "use strict";
+//!: 一个构造函数可以同时拥有多个装饰器
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,24 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var myDecorator = function (target) {
     target.prototype.getMyName = function () {
-        return '张大宝';
+        return "张大宝";
     };
 };
 var playDecorator = function (target) {
     target.prototype.playMusic = function () {
-        console.log('播放音乐');
+        console.log("播放音乐");
     };
 };
-var User = /** @class */ (function () {
-    function User() {
+var User1 = /** @class */ (function () {
+    function User1() {
     }
-    User.prototype.getMyName = function () { };
-    User = __decorate([
+    User1.prototype.getMyName = function () { };
+    User1 = __decorate([
         myDecorator,
         playDecorator
-    ], User);
-    return User;
+    ], User1);
+    return User1;
 }());
-var user = new User();
-console.log(user.getMyName());
+var user1 = new User1();
+console.log(user1.getMyName());
 user.playMusic();

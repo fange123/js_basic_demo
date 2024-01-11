@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var randomColor = function (target, propertyKey) {
     var colors = ['red', 'blue', 'green', 'yellow'];
     //!我的设置属性不起作用啊,但是方法是正确的
@@ -18,7 +21,8 @@ var MyColor = /** @class */ (function () {
     function MyColor() {
     }
     __decorate([
-        randomColor
+        randomColor,
+        __metadata("design:type", Object)
     ], MyColor.prototype, "color", void 0);
     return MyColor;
 }());

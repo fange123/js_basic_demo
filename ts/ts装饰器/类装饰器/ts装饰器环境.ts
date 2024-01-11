@@ -1,5 +1,3 @@
-function decorator(target: object){}
+function decorator(target: object) {}
 @decorator
-
-
-class ZHY{}
+class ZHY {}

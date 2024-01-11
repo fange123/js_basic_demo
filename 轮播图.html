@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    li {
+      list-style: none
+    }
+
+    #container {
+      margin: 20px auto;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #wrap {
+      width: 3000px;
+      height: 400px;
+      display: flex;
+      position: absolute;
+
+    }
+
+    #wrap li {
+      width: 600px;
+      height: 400px;
+    }
+
+    #wrap li:nth-child(1) {
+      background-color: blue
+    }
+
+    #wrap li:nth-child(2) {
+      background-color: pink
+    }
+
+    #wrap li:nth-child(3) {
+      background-color: orange
+    }
+
+    #wrap li:nth-child(4) {
+      background-color: green
+    }
+
+    #wrap li:nth-child(5) {
+      background-color: blue
+    }
+
+    #wrap li:nth-child(6) {
+      background-color: pink
+    }
+
+    #arrow {
+      width: 100%;
+      position: absolute;
+      top: 185px;
+      display: flex;
+      justify-content: space-between
+    }
+
+    #arrow span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .4);
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #num_wrap {
+      position: absolute;
+      bottom: 20px;
+      width: 100px;
+      display: flex;
+      justify-content: space-around;
+      left: 250px;
+    }
+
+    #num_wrap li {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      background-color: #000;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <ul id="wrap">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <div id="arrow">
+      <span>&lt;</span>
+      <span>&gt;</span>
+    </div>
+
+    <ul id="num_wrap">
+      <li data-li="1"></li>
+      <li data-li="2"></li>
+      <li data-li="3"></li>
+      <li data-li="4"></li>
+    </ul>
+  </div>
+
+  <script>
+    var currentIndex = 0;
+    let timerId = null;
+    //初始化的位置
+    wrap.style.left = `-600px`
+    function start() {
+      timerId = setInterval(() => {
+        wrap.style.transition = '0.5s'
+        if (currentIndex === 4) {
+          wrap.style.left = `-0px`
+          wrap.style.transition = '0s'
+          currentIndex = 0;
+
+        } else {
+          currentIndex++;
+          wrap.style.left = `-${currentIndex * 600}px`
+
+        }
+
+
+      }, 1000)
+
+
+    }
+    start()
+
+
+  </script>
+
+</body>
+
+</html>

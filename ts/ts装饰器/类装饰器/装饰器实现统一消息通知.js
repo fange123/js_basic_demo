@@ -10,11 +10,12 @@ var MessageDecorator = function (target) {
         console.log(content);
     };
 };
+//* 通过继承也能实现，装饰器也可以
 var LoginController = /** @class */ (function () {
     function LoginController() {
     }
     LoginController.prototype.login = function () {
-        this.message('恭喜你呀，登录成功');
+        this.message("恭喜你呀，登录成功");
     };
     LoginController = __decorate([
         MessageDecorator
@@ -26,7 +27,7 @@ var ArticleController = /** @class */ (function () {
     function ArticleController() {
     }
     ArticleController.prototype.store = function () {
-        this.message('文章修改成功');
+        this.message("文章修改成功");
     };
     ArticleController = __decorate([
         MessageDecorator

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字体高亮显示</title>
+  <style>
+    .red_t {
+      color: #f00;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    let dom = document.querySelector('#container');
+    let str = '小写ab混合大小写aB大写AB';
+    let strKeyWord = 'p'; //需要匹配的关键词
+    //i代表忽略大小写，g代表全局匹配，不加g可以理解为str.replace('Ab')，加g为replaceAll('Ab')，此处'Ab'不区分大小写（正则不能放在replaceAll中）
+    var oRegExp = new RegExp('(' + strKeyWord + ')', "ig");
+    //$1代表正则中第一个小括号"()"本次的匹配结果,$2为第二个，以此类推；
+    str = str.replace(oRegExp, `<font class="red_t">$1</font>`);
+    dom.innerHTML = str;
+    console.log(str);
+  </script>
+</body>
+
+</html>

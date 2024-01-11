@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link href="favicon.ico" type="image/x-icon" rel="icon" />
+  <title>浅谈React合成事件</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1 id="content">hello</h1>
+  </div>
+</body>
+<script>
+  const logFunc = (target, isSynthesizer, isCapture = false) => {
+    const info = `${isSynthesizer ? '合成' : '原生'}事件，${isCapture ? '捕获' : '冒泡'}阶段，${target}元素执行了`;
+    console.log(info);
+  };
+  // document的派发事件函数
+  const dispatchEvent = currentDom => {
+    let current = currentDom;
+    let eventCallbacks = []; // 存储冒泡事件回调函数
+    let eventCaptureCallbacks = []; // 存储冒泡事件回调函数
+    // 收集事件流一路上的所有回调函数
+    while (current) {
+      if (current.onClick) {
+        eventCallbacks.push(current.onClick);
+      }
+      if (current.onClickCapture) {
+        // 捕获阶段由外到内，所以需要把回调函数放到数组的最前面
+        eventCaptureCallbacks.unshift(current.onClickCapture);
+      }
+      current = current.parentNode;
+    }
+    // 执行调用
+    eventCaptureCallbacks.forEach(callback => callback());
+    eventCallbacks.forEach(callback => callback());
+  };
+  const wrapperDom = document.getElementById('wrapper');
+  const contentDom = document.getElementById('content');
+
+  // 一路上注册原生事件
+  document.addEventListener('click', () => logFunc('document', false, true), true);
+  wrapperDom.addEventListener('click', () => logFunc('div', false, true), true);
+  contentDom.addEventListener('click', () => logFunc('h1', false, true), true);
+  contentDom.addEventListener('click', () => logFunc('h1', false));
+  wrapperDom.addEventListener('click', () => logFunc('div', false));
+  document.addEventListener('click', e => {
+    dispatchEvent(e.target); // 这里收集一路上的事件进行派发
+    logFunc('document', false);
+  });
+
+  // 模拟合成事件
+  wrapperDom.onClick = () => logFunc('div', true);
+  wrapperDom.onClickCapture = () => logFunc('div', true, true);
+  contentDom.onClick = () => logFunc('h1', true);
+  contentDom.onClickCapture = () => logFunc('h1', true, true);
+</script>
+
+</html>

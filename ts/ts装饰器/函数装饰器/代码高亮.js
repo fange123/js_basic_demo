@@ -8,28 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var LowDecorator = function (target, propertyKey) {
-    console.log(propertyKey);
-    //#写一个访问器，对属性进行修改
-    var value;
-    Object.defineProperty(target, propertyKey, {
-        get: function () {
-            return value.toLocaleLowerCase();
-        },
-        set: function (v) {
-            value = v;
-        }
-    });
+var highLightDecorator1 = function (target, propertyKey, descriptor) {
+    //* 先保存一份原来的被装饰方法
+    var temp = descriptor.value;
+    descriptor.value = function () { return "<div style='color:pink'>" + temp() + "</div>"; };
 };
-var User = /** @class */ (function () {
-    function User() {
+var P2 = /** @class */ (function () {
+    function P2() {
     }
+    P2.prototype.show = function () {
+        return "你好，哈哈哈";
+    };
     __decorate([
-        LowDecorator,
-        __metadata("design:type", Object)
-    ], User.prototype, "title", void 0);
-    return User;
+        highLightDecorator1,
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], P2.prototype, "show", null);
+    return P2;
 }());
-var user = new User();
-user.title = 'ZHANGHAIYU';
-console.log(user.title);
+document.body.innerHTML = new P2().show();

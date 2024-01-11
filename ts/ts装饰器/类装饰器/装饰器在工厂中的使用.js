@@ -5,33 +5,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+//* 装饰器工厂，根据不同的类型，返回不同的装饰器
 //~定义一个工厂
 var testDecoratorFactory = function (type) {
     console.log(type);
     switch (type) {
         case "Car":
+            //* 返回Car类型的装饰器
             return function (target) {
                 target.prototype.test = function () {
-                    console.log('测试小汽车');
+                    console.log("测试小汽车");
                 };
             };
         case "Hat":
             return function (target) {
                 target.prototype.test = function () {
-                    console.log('测试戴帽子');
+                    console.log("测试戴帽子");
                 };
             };
         default:
             return function (target) {
                 target.prototype.test = function () {
-                    console.log('测试~~~');
+                    console.log("测试~~~");
                 };
             };
     }
 };
 var testDecorator = function (target) {
     target.prototype.test = function () {
-        console.log('测试');
+        console.log("测试");
     };
 };
 var Car = /** @class */ (function () {

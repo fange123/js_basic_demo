@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // !:prompt是字符串
+    // let prompt_ = prompt("请输入数字");
+    //输入abc会打印‘奇数’，所以必须判断输入的是否是合法数字
+    //NaN不能通过==或者===来判断，因为他和自己不相等
+    //可以使用一个函数isNaN来判断是否是NaN
+    //如果输入小数，也麻烦，直接取整吧,或者通过对1取模去判断是不是小数
+    // prompt_ = parseInt(prompt_)
+    // if (isNaN(prompt_) || prompt_ % 1 !== 0) {
+    //   alert('请输入合法数字')
+
+    // } else {
+    //   alert(prompt_ % 2 === 0 ? "偶数" : "奇数");
+
+    // }
+
+
+    // const grade = 60
+    // if (grade === 100) {
+    //   console.log("奖励一辆BWM")
+    // } else if (grade >= 80 && grade < 100) {
+    //   console.log("奖励一个iPhone")
+    // } else if (grade >= 60 && grade < 80) {
+    //   console.log("奖励一本参考书")
+    // } else {
+    //   console.log('啥都没有');
+    // }
+
+    const height = 180, wealth = 500, appearance = 1000
+    // if (height >= 180 && wealth >= 500 && appearance >= 1000) {
+    //   console.log('我一定要嫁给他');
+    // } else if (height < 180 && wealth < 500 && appearance < 1000) {
+    //   console.log('不嫁');
+    // } else {
+    //   console.log('比上不足比下有余，嫁吧');
+    // }
+    if (height >= 180 && wealth >= 500 && appearance >= 1000) {
+      console.log('我一定要嫁给他');
+    } else if (height >= 180 || wealth >= 500 || appearance >= 1000) {
+      console.log('比上不足比下有余，嫁吧');
+    } else {
+      console.log('不嫁');
+
+    }
+
+    //switch时做全等判断的
+    //* switch分支，当条件满足时，从当前case处执行后面的代码，如果没有break或者return语句，就会一直执行
+    //!: break是直接退出switch语句，return是退出该函数，也就是switch语句块后面的语句也不执行了。return一定要有函数
+
+
+    // const key = 1
+    // switch (key) {
+    //   case 1:
+    //     console.log('1');
+    //     break
+    //   case 2:
+    //     console.log('2');
+    //     break
+    //   case 3:
+    //     console.log('3');
+    //     break
+
+    //   default:
+    //     break;
+    // }
+
+    const key = 1
+    let a = 0
+
+    const getKey = () => {
+      switch (key) {
+        case 1:
+          return a = '壹';
+        case 2:
+          return a = '贰';
+        case 3:
+          return a = '叁';
+
+        default:
+          return a = '啊'
+      }
+    }
+    getKey()
+
+
+    console.log(a);
+
+  </script>
+
+</body>
+
+</html>
